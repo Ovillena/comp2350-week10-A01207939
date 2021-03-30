@@ -9,4 +9,4 @@ if (is_heroku) {
 }
 module.exports = databaseConnectionString;
 
-mysql://be92f2823cdbe0:562283e6@us-cdbr-east-03.cleardb.com/heroku_f3df4ecbfcf7594?reconnect=true
+// mysql://be92f2823cdbe0:562283e6@us-cdbr-east-03.cleardb.com/heroku_f3df4ecbfcf7594?reconnect=true
