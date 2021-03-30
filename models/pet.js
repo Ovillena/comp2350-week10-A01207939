@@ -1,5 +1,7 @@
 const { Sequelize, DataTypes } = require("sequelize");
 const databaseConnectionString = include("/databaseConnectionSequelize");
+const userModel = include("models/web_user");
+
 const sequelize = new Sequelize(databaseConnectionString);
 const userModel = sequelize.define(
   "pet",
@@ -20,4 +22,16 @@ const userModel = sequelize.define(
     plural: "pet",
   }
 );
+
+petModel.belongsTo(userModel, {
+  as: "owner",
+  timestamps: false,
+  foreignKey: "web_user_id",
+});
+userModel.hasMany(petModel, {
+  as: "pets",
+  timestamps: false,
+  foreignKey: "web_user_id",
+});
+
 module.exports = userModel;
