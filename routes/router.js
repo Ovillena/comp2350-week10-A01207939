@@ -3,7 +3,7 @@ const router = require("express").Router();
 // const dbModel = include('databaseAccessLayer');
 //const dbModel = include('staticData');
 
-const userModel = include("../models/web_user");
+const userModel = include("models/web_user");
 
 router.get("/", async (req, res) => {
   console.log("page hit");
@@ -12,7 +12,7 @@ router.get("/", async (req, res) => {
       attributes: ["web_user_id", "first_name", "last_name", "email"],
     }); //{where: {web_user_id:1}}
     if (users === null) {
-      res.render("error", { message: "Error connecting toMySQL" });
+      res.render("error", { message: "Error connecting to MySQL" });
       console.log("Error connecting to userModel");
     } else {
       console.log(users);
