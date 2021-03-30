@@ -8,6 +8,7 @@ const { v4: uuid } = require("uuid");
 const passwordPepper = "SeCretPeppa4MySal+";
 
 const userModel = include("models/web_user");
+const petModel = include("models/pet");
 
 router.get("/", async (req, res) => {
   console.log("page hit");
@@ -32,7 +33,7 @@ router.get("/", async (req, res) => {
 router.get("/pets", async (req, res) => {
   console.log("page hit");
   try {
-    const pets = await userModel.findAll({
+    const pets = await petModel.findAll({
       attributes: ["pet_id", "web_user_id", "name", "pet_type_id"],
     });
     if (pets === null) {
