@@ -3,7 +3,7 @@ const databaseConnectionString = include("/databaseConnectionSequelize");
 const userModel = include("models/web_user");
 
 const sequelize = new Sequelize(databaseConnectionString);
-const userModel = sequelize.define(
+const petModel = sequelize.define(
   "pet",
   {
     pet_id: {
@@ -34,4 +34,4 @@ userModel.hasMany(petModel, {
   foreignKey: "web_user_id",
 });
 
-module.exports = userModel;
+module.exports = petModel;
