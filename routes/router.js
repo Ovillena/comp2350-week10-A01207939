@@ -41,7 +41,7 @@ router.get("/pets", async (req, res) => {
       console.log("Error connecting to userModel");
     } else {
       console.log(pets);
-      res.render("index", { allPets: pets });
+      res.render("pet", { allPets: pets });
     }
   } catch (ex) {
     res.render("error", { message: "Error connecting to MySQL" });
