@@ -8,7 +8,7 @@ global.include = function (file) {
 };
 
 const express = require("express");
-const database = include("databaseConnectionSequelize");
+const database = include("databaseConnection");
 const router = include("routes/router");
 
 const port = process.env.PORT || 3000;
